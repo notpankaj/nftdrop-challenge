@@ -71,7 +71,7 @@ function NFTDropPage({ collection }: Props) {
       },
     })
     nftDrop
-      ?.claimTo(address, quantity)
+      ?.claimTo(address || 'h', quantity)
       .then(async (tx) => {
         const receipt = await tx[0].receipt
         const claimedTokenId = await tx[0].id
